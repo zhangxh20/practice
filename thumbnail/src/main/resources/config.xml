@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 读取图片文件夹路径 -->
+    <fileFrom dir="D:/image"></fileFrom>
+    <!-- 输出文件路径 -->
+    <fileTo file="D:/image/all.jpg"></fileTo>
+    <!-- 每一张缩略图的宽和高，它们之间的间隙，每一行有几列 -->
+    <image width="240" height="160" gap="4" column="4" ></image>
+    <!-- 图片压缩的质量 -->
+    <compress quality="0.8f"></compress>
+</config>
