@@ -1,9 +1,5 @@
 # 练习
 
-# codis
-
-codisJava客户端
-
 # Curator
 
 zookeeper客户端
