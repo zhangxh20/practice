@@ -1,10 +1,11 @@
 package org.dubbo.service;
 
-import org.dubbo.bean.User;
+import org.dubbo.request.UserReq;
+import org.dubbo.response.UserResp;
 
 public interface UserService {
 
-    void register(User user);
+    void register(UserReq user);
     
-    User getUserById(int id);
+    UserResp getUserById(int id);
 }

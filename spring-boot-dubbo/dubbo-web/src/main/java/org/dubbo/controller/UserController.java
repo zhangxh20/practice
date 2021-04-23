@@ -1,28 +1,29 @@
 package org.dubbo.controller;
 
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.dubbo.bean.JsonResponse;
-import org.dubbo.bean.User;
+import org.dubbo.request.UserReq;
+import org.dubbo.response.UserResp;
 import org.dubbo.service.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 
 @RestController
 public class UserController {
 
-    @Reference
+    @DubboReference
     private UserService userService;
     
     @RequestMapping("register")
-    public JsonResponse register(User user) {
+    public JsonResponse register(UserReq user) {
         userService.register(user);
         return JsonResponse.success();
     }
     
     @RequestMapping("getUser")
     public JsonResponse getUser(int id) {
-        User user = userService.getUserById(id);
+        UserResp user = userService.getUserById(id);
         JsonResponse resp = new JsonResponse();
         resp.setData(user);
         return resp;

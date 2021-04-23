@@ -1,28 +1,26 @@
 package org.dubbo.service.impl;
 
-import org.dubbo.bean.User;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.dubbo.dao.UserMapper;
+import org.dubbo.request.UserReq;
+import org.dubbo.response.UserResp;
 import org.dubbo.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 
-import com.alibaba.dubbo.config.annotation.Service;
+import javax.annotation.Resource;
 
-@Service(interfaceClass=UserService.class)
+@DubboService
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserMapper userMapper;
-    
-    @Transactional
+    @Resource
+    public UserMapper userMapper;
+
     @Override
-    public void register(User user) {
-        userMapper.save(user);
+    public void register(UserReq user) {
+
     }
 
     @Override
-    public User getUserById(int id) {
-        return userMapper.get(id);
+    public UserResp getUserById(int id) {
+        return null;
     }
-
 }

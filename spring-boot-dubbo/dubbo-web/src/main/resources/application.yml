@@ -1,0 +1,7 @@
+dubbo:
+  application:
+    name: dubbo-web
+  scan:
+    base-packages: org.dubbo
+  registry:
+    address: nacos://localhost:8848
